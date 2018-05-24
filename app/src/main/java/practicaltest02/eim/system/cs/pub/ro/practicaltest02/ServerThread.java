@@ -83,6 +83,7 @@ public class ServerThread implements Runnable{
         Log.e("SERVER", "Fac cerere http pentru " + urlSTring);
         URL url = null;
         try {
+//            String copiedUrl = "http://192.99.11.49/DictService/DictService.asmx/Define?word=omni";
             url = new URL(urlSTring);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
@@ -95,8 +96,7 @@ public class ServerThread implements Runnable{
             BufferedReader rd;
             if(status > HttpURLConnection.HTTP_OK) {
                 rd = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
-//                rd=null;
-                Log.e("SERVER", "not ok " + status);
+//                Log.e("SERVER", "not ok " + status);
             }else{
 //                Log.e("SERVER", "ok " + connection.getInputStream());
                 rd = new BufferedReader(new InputStreamReader(connection.getInputStream()));

@@ -38,7 +38,7 @@ public class ClientThread implements Runnable {
             byte[] buffer = new byte[1024];
             int read;
             while((read = is.read(buffer)) != -1) {
-                Log.e("CLIENT", "Am primit " + buffer);
+//                Log.e("CLIENT", "Am primit " + buffer);
                 result += new String(buffer, 0, read);
             }
 
